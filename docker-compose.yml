@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - 8811:80
+    volumes:
+      - ./:/var/www
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      TZ: UTC
+    links:
+      - php
+
+  php:
+    build:
+      context: ./
+      dockerfile: config/docker/Dockerfile-php
+    volumes:
+      - ./:/var/www
+      - ./config/php/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      TZ: UTC
+      DEBUG: 0

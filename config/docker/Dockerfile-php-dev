@@ -1,0 +1,8 @@
+FROM php:7.2-fpm
+
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && pecl install -f xdebug-2.6.0 \
+    && docker-php-ext-enable xdebug
+
+CMD ["php-fpm"]

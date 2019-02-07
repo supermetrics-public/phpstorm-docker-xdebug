@@ -1,0 +1,9 @@
+version: '3'
+services:
+  php:
+    build:
+      dockerfile: config/docker/Dockerfile-php-dev
+    volumes:
+      - ./config/php/php-dev.ini:/usr/local/etc/php/php.ini
+    environment:
+      DEBUG: 1

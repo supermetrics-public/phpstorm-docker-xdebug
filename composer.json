@@ -1,0 +1,28 @@
+{
+  "name": "supermetrics/vilnius-demo",
+  "description": "Vilnius demo project",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Metod Novakovic",
+      "email": "metod.novakovic@supermetrics.com"
+    },
+    {
+      "name": "Niklas Lampén",
+      "email": "niklas.lampen@supermetrics.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Supermetrics\\Connector\\": "src/"
+    }
+  },
+  "require": {
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "php": "^7.2",
+    "phpunit/phpunit": "^7.4"
+  }
+}
